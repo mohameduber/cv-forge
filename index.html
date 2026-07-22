@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a professional English or Arabic resume and export it as PDF.">
+  <title>CVForge - Resume Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CVForge home">CV<span>Forge</span></a>
+    <nav class="toolbar" aria-label="Editor controls">
+      <label class="select-label">
+        <span id="templateLabel">Template</span>
+        <select id="templateSelect">
+          <option value="classic">Classic</option>
+          <option value="modern">Modern</option>
+          <option value="minimal">Minimal</option>
+        </select>
+      </label>
+      <label class="color-label" title="Accent color">
+        <span class="sr-only">Accent color</span>
+        <input id="accentPicker" type="color" value="#2563eb">
+      </label>
+      <button id="langButton" class="button subtle" type="button">عربي</button>
+      <button id="resetButton" class="button subtle" type="button">New CV</button>
+      <button id="proButton" class="button pro" type="button">Remove watermark</button>
+      <button id="downloadButton" class="button primary" type="button">Download PDF</button>
+    </nav>
+  </header>
+
+  <main class="workspace">
+    <aside id="formPanel" class="form-panel" aria-label="CV editor"></aside>
+    <section class="preview-panel" aria-label="CV preview">
+      <div id="previewViewport" class="preview-viewport">
+        <div id="previewScaler" class="preview-scaler">
+          <div id="cvPreview"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="proModal" class="modal-layer hidden" role="dialog" aria-modal="true" aria-labelledby="proTitle">
+    <div class="modal-card">
+      <button id="closeModalButton" class="modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="modal-badge">PRO</div>
+      <h2 id="proTitle">Remove the watermark</h2>
+      <p id="proDescription">Pay once and export clean resumes forever on this device.</p>
+      <a id="buyButton" class="button primary wide" href="#" target="_blank" rel="noopener">Buy a license</a>
+      <div class="divider"><span>Already purchased?</span></div>
+      <div class="license-row">
+        <input id="licenseInput" type="text" dir="ltr" autocomplete="off" placeholder="Paste your license key">
+        <button id="activateButton" class="button dark" type="button">Activate</button>
+      </div>
+      <p id="licenseStatus" class="license-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
