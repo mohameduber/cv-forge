@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohameduber.github.io/cv-forge/sitemap.xml
